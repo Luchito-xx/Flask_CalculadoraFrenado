@@ -9,16 +9,24 @@
 <body>
     <form action="/" method="POST">
     Velocidad (m/s)
-    <input type="text" name="velocidad"><br>
+    <input type="number" name="velocidad"><br>
     Distancia del Caballo
-    <input type="text" name="distancia"><br>
+    <input type="number" name="distancia"><br>
     Desaceleracion del auto (En negativo)
-    <input type="text" name="frenado"><br>
+    <input type="number" name="frenado"><br>
     <button type="submit" value="submit">Calcular</button>
     </form>
-    {%if calculo%}
-    <p>El calculo es: {{calculo}}</p>
+    
+    {%if acel%}
+    <p>Te tragaste a un caballo de frente pobre de el :( Necesitabas frenar a {{acel}} para no chocarte. Lo chocaste en {{tie}} segundos</p>
     {%endif%}
+
+    {%if dist2%}
+    <p>Te quedaste a {{dist2}} metros de chocar al caballo</p>
+    <p>Frenaste en {{tie}} segundos</p>   
+    {%endif%}
+
+
     <footer>Luciano Fernandez</footer>
 </body>
 </html>
