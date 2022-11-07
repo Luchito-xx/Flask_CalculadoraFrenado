@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+</head>
+<body>
+    <form action="/" method="POST">
+    Velocidad (m/s)
+    <input type="text" name="velocidad"><br>
+    Distancia del Caballo
+    <input type="text" name="distancia"><br>
+    Desaceleracion del auto (En negativo)
+    <input type="text" name="frenado"><br>
+    <button type="submit" value="submit">Calcular</button>
+    </form>
+    {%if calculo%}
+    <p>El calculo es: {{calculo}}</p>
+    {%endif%}
+    <footer>Luciano Fernandez</footer>
+</body>
+</html>

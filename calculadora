@@ -1,0 +1,17 @@
+from flask import Flask, render_template, request
+
+app = Flask(__name__)
+
+@app.route("/", methods=['POST','GET'])
+def calcular():
+    calculo=''
+    if request.method == 'POST' and 'velocidad' in request.form and 'distancia' in request.form and 'frenado' in request.form:
+        Velocidad=float(request.form.get('velocidad'))
+        Distancia=float(request.form.get('distancia'))
+        Frenado=float(request.form.get('frenado'))
+        calculo =  0+Velocidad*((0-Velocidad)/Frenado)+0.5*Frenado*(((0-Velocidad)/Frenado)*((0-Velocidad)/Frenado))
+ 
+    return render_template('index.html', calculo=calculo)
+
+if (__name__) == ('__main__'):
+    app.run(debug=True, port=5000)
