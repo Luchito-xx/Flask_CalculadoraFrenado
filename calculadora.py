@@ -12,8 +12,8 @@ def calcular():
         Distancia=float(request.form.get('distancia'))
         Frenado=float(request.form.get('frenado'))
         calc = 0-Velocidad
-        tie = calc/Frenado
-        dist = 0+Velocidad*tie+0.5*Frenado*(tie+tie)
+        tie = round(calc/Frenado,2)
+        dist = round(0+Velocidad*tie+0.5*Frenado*(tie+tie),2)
 
         if dist > Distancia:
             c = Velocidad + (1/2)*(0-Velocidad)
